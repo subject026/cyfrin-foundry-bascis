@@ -1,66 +1,11 @@
-## Foundry
+# Foundry Basics
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+### HelperConfig
 
-Foundry consists of:
+Contract depends depends on a chainlink price feed and requires it's contract address to be passed in the constructor when deployed.
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+Helper config us used in our deploy script provides the the real Chainlink interface if we're deploying to sepoloa and our mock if we're working locally.
 
-## Documentation
+### MockV3Aggregator
 
-https://book.getfoundry.sh/
-
-## Usage
-
-### Build
-
-```shell
-$ forge build
-```
-
-### Test
-
-```shell
-$ forge test
-```
-
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+Used when running tests locally.
